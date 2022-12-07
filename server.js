@@ -1,4 +1,7 @@
 
+// require("dotenv").config();
+import {config} from 'dotenv';
+
 // imports
 import express from 'express';
 import mongoose from 'mongoose';
@@ -8,12 +11,14 @@ import Pusher from 'pusher';
 
 
 // app configs
+config();
 const app = express();
 const port = process.env.PORT || 4000;
+
 const pusher = new Pusher({
-    appId: "1436865",
-    key: "45bad6741ce120f11b02",
-    secret: "5f64a7e5c290ec4d6d17",
+    appId: process.env.APPID,
+    key: process.env.KEY,
+    secret: process.env.SECRET,
     cluster: "mt1",
     useTLS: true
 });
@@ -24,7 +29,7 @@ app.use(express.json());
 app.use(cors());
 
 // DB configs
-const CONNECTION_URL= 'mongodb+srv://admin:admin123@cluster0.s91fz.mongodb.net/?retryWrites=true&w=majority';
+const CONNECTION_URL = process.env.CONNECTION_URL;
 
 mongoose.connect(CONNECTION_URL);
 
