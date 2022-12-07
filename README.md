@@ -1,6 +1,6 @@
 ## Whatsapp clone backend
 
-The node js server application for the whatsapp clone client. It makes use of mongoose change stream and pusher for real-time events.
+The node js server application for the whatsapp clone client. It makes use of mongoose change stream and pusher for real-time events. Have some fun with it.
 
 ---
 
